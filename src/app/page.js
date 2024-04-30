@@ -18,6 +18,7 @@ export default async function Home() {
                 <p>{product.description}</p>
                 <b>{product.price}&euro;</b>
                 <p>{product.brand}</p>
+                  <a href={`/products/${product.id}`}>learn more</a>
               </div>
 
             })
