@@ -1,4 +1,6 @@
 
+
+
 export default async function Products ({ params }){
 
     const response = await fetch('https://dummyjson.com/products/'+params.slug);
