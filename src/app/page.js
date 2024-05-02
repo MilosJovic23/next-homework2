@@ -5,7 +5,6 @@ export default async function Home() {
 
   const response = await fetch('https://dummyjson.com/products?limit=9');
   const data = await response.json();
-  console.log(data)
 
   return (
       <>
@@ -20,7 +19,6 @@ export default async function Home() {
                 <p>{product.brand}</p>
                   <a href={`/products/${product.id}`}>learn more</a>
               </div>
-
             })
           }
         </div>
