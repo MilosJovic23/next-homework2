@@ -8,6 +8,7 @@ export default async function Products ({ params }){
 
     return(
         <>
+
             <div>
                 <h3>{data.title}</h3>
                 <p>{data.brand}</p>
@@ -15,6 +16,7 @@ export default async function Products ({ params }){
                 <b>{data.price}&euro;</b>
                 <p>{data.category}</p>
             </div>
+
         </>
 
     )
