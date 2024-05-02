@@ -13,7 +13,7 @@ export default async function Home() {
         <div className="productWrapper">
           {
             data.products.map((product)=>{
-              return <div className="singleProduct">
+              return <div key={product.id} className="singleProduct">
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
                 <b>{product.price}&euro;</b>
