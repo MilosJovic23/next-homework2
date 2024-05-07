@@ -1,9 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 
 export default async function Home() {
 
-  const response = await fetch('https://dummyjson.com/products?limit=9');
+  const response = await fetch(process.env.PRODUCTS_API_URL+'/products?limit=9');
   const data = await response.json();
 
   return (

@@ -1,11 +1,10 @@
 
 
-
 export default async function Products ({ params }){
 
-    const response = await fetch('https://dummyjson.com/products/'+params.slug);
+    const response = await fetch(process.env.PRODUCTS_API_URL+'/products/'+params.slug);
     const data = await response.json();
-
+    console.log(process.env.PRODUCTS_API_URL)
     return(
         <>
 
