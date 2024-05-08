@@ -1,12 +1,15 @@
+import getAllProducts, { getProductById } from "../../../../services/productService";
 
 
 export default async function Products ({ params }){
 
-    const response = await fetch(process.env.PRODUCTS_API_URL+'/products/'+params.slug);
-    const data = await response.json();
-    console.log(process.env.PRODUCTS_API_URL)
-    return(
-        <>
+    const data = await getProductById(params.slug);
+
+
+    if( !data ){
+        return <h1>Ova stranice ne postoji</h1>
+    }
+    return<>
 
             <div>
                 <h3>{data.title}</h3>
@@ -18,5 +21,5 @@ export default async function Products ({ params }){
 
         </>
 
-    )
+
 };
