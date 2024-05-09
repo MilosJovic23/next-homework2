@@ -1,6 +1,6 @@
 import getAllProducts, {searchProducts} from "../../services/productService";
-import SearchByTitle from "@/app/SearchByTitle";
-import Search from "@/app/SearchByTitle";
+import SearchByTitle from "@/app/components/SearchByTitle";
+import Search from "@/app/components/SearchByTitle";
 
 export default async function Home() {
 
