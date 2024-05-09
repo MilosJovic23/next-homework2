@@ -1,4 +1,6 @@
-import getAllProducts from "../../services/productService";
+import getAllProducts, {searchProducts} from "../../services/productService";
+import SearchByTitle from "@/app/SearchByTitle";
+import Search from "@/app/SearchByTitle";
 
 export default async function Home() {
 
@@ -22,7 +24,7 @@ export default async function Home() {
             })
           }
         </div>
-
+        <Search/>
       </>
 
   );
