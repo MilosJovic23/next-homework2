@@ -20,7 +20,7 @@ export async function getProductById(productId){
     return await response.json();
 }
 
-export async function searchProducts(searchTerm){
-    const response = await fetch(`https://dummyjson.com/products/search?q=${searchTerm}`);
+export async function searchProductByQuery(query){
+    const response = await fetch(process.env.PRODUCTS_API_URL+`/products/search?q=${query}`);
     return await response.json();
 }
