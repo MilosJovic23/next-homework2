@@ -1,15 +1,16 @@
+import {searchProductByQuery} from "../../services/productService";
 
 
-export default function handler(req,res){
+export default async function handler(req,res){
 
-   // console.log(req,res)
-   //
-   //
-   //
-   // console.log(req.query.pretraga)
+   const data = await searchProductByQuery(req.query.pretraga);
+
 
    if( !req.query.pretraga ){
       res.status(400).json({message:"niste prosledili parametar za pretragu"})
    }
-   res.status(200).json({message:"ovaj api radi"})
+   res.status(200).json(data)
+
+
+
 }
