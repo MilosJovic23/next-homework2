@@ -10,8 +10,10 @@ export default async function Products ({ params }){
     if( !data ){
         return <h1>Ova stranice ne postoji</h1>
     }
+
+    http://localhost:3000/api/search?pretraga=phone
     return<>
-            <Search/>
+
             <div>
                 <h3>{data.title}</h3>
                 <p>{data.brand}</p>
