@@ -1,5 +1,5 @@
 import getAllProducts, { getProductById } from "../../../../services/productService";
-import Search from "@/app/SearchByTitle";
+import Search from "@/app/components/SearchByTitle";
 
 
 export default async function Products ({ params }){
