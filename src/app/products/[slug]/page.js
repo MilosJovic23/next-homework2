@@ -11,7 +11,6 @@ export default async function Products ({ params }){
         return <h1>Ova stranice ne postoji</h1>
     }
 
-    http://localhost:3000/api/search?pretraga=phone
     return<>
 
             <div>
