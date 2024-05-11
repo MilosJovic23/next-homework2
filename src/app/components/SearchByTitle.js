@@ -1,29 +1,34 @@
 
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
+
+
 
 const Search = ()=>{
 
     const [inputValue, setInputValue] = useState('');
+    const [delayedInputValue, setDelayedInputValue] = useState('');
+    const fetcher = async (url) => fetch(url).then(res => res.json());
+    const { data: fetchData, error } = useSWR(`http://localhost:3000/api/search?pretraga=${delayedInputValue}`, fetcher);
 
-        const fetcher = async ()=>{
-            const response = await fetch(`http://localhost:3000/api/search?pretraga=${inputValue}`);
-            return await response.json();
-        }
-        const { data:fetchData,error }=useSWR("search",fetcher,{
-            refreshInterval: 1000
-        });
-        if (error) return <div>Error loading data</div>;
-        if (!fetchData) return <div>Loading...</div>;
+    useEffect(() => {
+        const delayTimer = setTimeout(() => {
+            setDelayedInputValue(inputValue);
+        }, 1200);
 
+    return () => clearTimeout(delayTimer);
+    }, [inputValue]);
+
+    if (error) return <div>Error loading data. Please try again later.</div>;
 
     return <>
         <form >
             <input
                 type="text"
                 placeholder="search"
+                value={inputValue}
                 onChange={ e=>setInputValue(e.currentTarget.value) }
             />
 
