@@ -31,8 +31,6 @@ export default function Register(){
             <input type="text" placeholder="opis proizvoda" onChange={e => setDescription(e.currentTarget.value)}/>
             <button type="button" onClick={ createProduct }>dodaj proizvod</button>
         </form>
-        {/*<p>{data.id}</p>*/}
-        {/*<p>{data.title}</p>*/}
-        {/*<p>{data.description}</p>*/}
+
     </>
 }
