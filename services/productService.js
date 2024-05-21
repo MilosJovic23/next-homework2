@@ -38,16 +38,3 @@ export  function addProductAPI( name,price,description){
         .then(res=>res.json())
 
 }
-export function apiAuthentication(username,password){
-    const res = fetch('https://dummyjson.com/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            username: username,
-            password: password,
-            expiresInMinutes: 30, // optional, defaults to 60
-        })
-    })
-        .then(res => res.json())
-        .then(console.log)
-}
