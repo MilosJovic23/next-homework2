@@ -1,11 +1,9 @@
 import {apiAuthentication} from "../../services/productService";
 
 
-export default function handler(req,res){
+    export default function handler(req,res){
 
-    apiAuthentication()
+        apiAuthentication(req.body.username,req.body.password)
 
-    res.status(200).json({
-        message:"success"
-    })
+    res.status(200).json({message:"works"})
 }
