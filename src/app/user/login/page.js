@@ -1,7 +1,7 @@
 
 "use client"
 
-import useSWR from "swr";
+
 import {useState} from "react";
 
 export default function Login(){
@@ -16,11 +16,15 @@ export default function Login(){
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    username: username,
+                    username: username ,
                     password: password,
+                    expiresInMins: 30
                 })
             })
-        } catch (error) {
+            const data = await response.json();
+            console.log(data);
+        }
+        catch (error) {
             console.error('Login failed:', error);
         }
 
