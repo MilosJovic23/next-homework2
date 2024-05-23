@@ -2,7 +2,7 @@
 "use client"
 
 
-import {useState} from "react";
+import { useState } from "react";
 
 export default function Login(){
 
@@ -22,7 +22,6 @@ export default function Login(){
                 })
             })
             const data = await response.json();
-            console.log(data);
         }
         catch (error) {
             console.error('Login failed:', error);
@@ -44,7 +43,7 @@ export default function Login(){
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={handleLogin}>Login</button>
+            <button onClick={ handleLogin }>Login</button>
         </div>
 
     </>
