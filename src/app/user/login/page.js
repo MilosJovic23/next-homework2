@@ -9,9 +9,6 @@ export default function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-
-
-
     const handleLogin = async ()=>{
         try {
             const response = await fetch('/api/auth_user', {
@@ -23,13 +20,14 @@ export default function Login(){
                     expiresInMins: 30
                 })
             })
+
             const data = await response.json();
             Cookies.set('token', data);
+
         }
         catch (error) {
             console.error('Login failed:', error);
         }
-
     }
     return <>
 
