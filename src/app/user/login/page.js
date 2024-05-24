@@ -22,6 +22,7 @@ export default function Login(){
                 })
             })
             const data = await response.json();
+            console.log(data)
         }
         catch (error) {
             console.error('Login failed:', error);
