@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 export default async function handler(req, res) {
 
         const response = await fetch('https://dummyjson.com/auth/login', {
@@ -12,10 +14,7 @@ export default async function handler(req, res) {
 
         const data = await response.json();
 
-        console.log(data)
-        res.status(200).json({
-            message: "success"
-        });
+        res.status(200).json(data.token);
 
 
 }
