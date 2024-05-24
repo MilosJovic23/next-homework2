@@ -1,13 +1,15 @@
 
 "use client"
 
-
+import Cookies from 'js-cookie';
 import { useState } from "react";
 
 export default function Login(){
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+
 
 
     const handleLogin = async ()=>{
@@ -22,7 +24,7 @@ export default function Login(){
                 })
             })
             const data = await response.json();
-            console.log(data)
+            Cookies.set('token', data);
         }
         catch (error) {
             console.error('Login failed:', error);
