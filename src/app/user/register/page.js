@@ -1,15 +1,15 @@
 
 "use client"
 
-import { auth } from "../firebase"
+import { auth } from "@/app/firebase"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 
 export default function Register() {
 
 
-    const register = (e)=>{
+    const register = async (e)=>{
 
-        const res = await createUserWithEmailAndPassword()
+        const res = await createUserWithEmailAndPassword(auth,"email@email.com","asdaadsfe23")
         e.preventDefault()
 
     }
