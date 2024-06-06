@@ -12,10 +12,8 @@ export default function Register() {
         e.preventDefault()
 
     }
-
     return <>
         <p>Hello World</p>
         <button onClick={e=>register(e) }>register</button>
     </>
-
 }
