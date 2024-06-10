@@ -5,10 +5,7 @@ import { auth } from "@/app/firebase"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import {useState} from "react";
 
-
-
 export default function Register() {
-
 
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -18,8 +15,8 @@ export default function Register() {
         e.preventDefault()
         const res = await createUserWithEmailAndPassword(auth,email,password)
 
-
     }
+
     return <>
         <input
             type="text"
