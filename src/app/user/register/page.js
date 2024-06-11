@@ -43,4 +43,5 @@ export default function Register() {
         />
         <button onClick={e => register(e)}>register</button>
     </>
+
 }
