@@ -19,7 +19,6 @@ export default function Register() {
     }
 
 
-
     return <>
         <input
             type="text"
@@ -34,6 +33,5 @@ export default function Register() {
             onChange={e => setPassword(e.currentTarget.value)}
         />
         <button onClick={e => register(e)}>register</button>
-        <button onClick={ isLoggedIn }>isLoggedIn</button>
     </>
 }
