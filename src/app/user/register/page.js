@@ -17,18 +17,16 @@ export default function Register() {
         localStorage.setItem("uid",res.user.accessToken)
 
     }
+
     const auth = getAuth();
+
     setPersistence(auth, browserSessionPersistence)
         .then(() => {
-
             return signInWithEmailAndPassword(auth, email, password);
-
         })
         .catch((error) => {
-
             const errorCode = error.code;
             const errorMessage = error.message;
-
         });
 
     return <>
