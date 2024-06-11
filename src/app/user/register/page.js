@@ -14,15 +14,14 @@ export default function Register() {
 
         e.preventDefault()
         const res = await createUserWithEmailAndPassword( auth,email,password );
-        localStorage.setItem("uid",res.user.accessToken)
 
     }
 
     const auth = getAuth();
 
-    setPersistence(auth, browserSessionPersistence)
+    setPersistence( auth,browserSessionPersistence )
         .then(() => {
-            return signInWithEmailAndPassword(auth, email, password);
+            return signInWithEmailAndPassword( auth,email,password );
         })
         .catch((error) => {
             const errorCode = error.code;
