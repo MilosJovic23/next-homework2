@@ -13,7 +13,7 @@ export default function Register() {
     const register = async (e)=>{
 
         e.preventDefault()
-        const res = await createUserWithEmailAndPassword( auth,email,password ); //  <- da li cuvati ovako podatke u klijentu?
+        const res = await createUserWithEmailAndPassword( auth,email,password );
 
     }
 
