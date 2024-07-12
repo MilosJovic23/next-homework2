@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {auth} from "@/app/firebase"
 
-const AuthContext = React.createContext(null)
+const AuthContext = React.createContext(null);
 
 }
  const AuthProvider = ({children}) => {
