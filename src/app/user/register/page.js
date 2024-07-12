@@ -12,8 +12,8 @@ export default function Register() {
 
     const register = async (e)=>{
 
-        e.preventDefault()
-        const res = await createUserWithEmailAndPassword( auth,email,password );
+        // e.preventDefault()
+        // const res = await createUserWithEmailAndPassword( auth,email,password );
 
     }
 
