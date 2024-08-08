@@ -9,11 +9,20 @@ export default function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = async ()=>{
-        try {
+    const handleLogin = async (e)=>{
+
+            e.preventDefault();
+
+            if(username === null || password === null){
+                alert("niste uneli username ili passwrod");
+                return;
+            }
+
             const response = await fetch('/api/auth_user', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
                     username: username ,
                     password: password,
@@ -21,13 +30,14 @@ export default function Login(){
                 })
             })
 
-            const data = await response.json();
-            Cookies.set('token', data);
+            if( response.status !== 200 ){
+                alert("nesto nije uredu pokusajte ponovo")
+            }
 
-        }
-        catch (error) {
-            console.error('Login failed:', error);
-        }
+            const data = await response.json();
+            localStorage.setItem("token",data.token)
+
+
     }
     return <>
 

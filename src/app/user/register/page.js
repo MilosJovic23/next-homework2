@@ -1,19 +1,21 @@
 
 "use client"
 
-import { auth } from "@/app/firebase"
 import { getAuth,createUserWithEmailAndPassword, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth"
 import  { useState } from "react";
+import { useAuth } from "@/app/context/authContext";
 
 export default function Register() {
 
+    const {user} = useAuth();
+    console.log(user)
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
 
     const register = async (e)=>{
 
-        // e.preventDefault()
-        // const res = await createUserWithEmailAndPassword( auth,email,password );
+        e.preventDefault()
+        const res = await createUserWithEmailAndPassword( auth,email,password );
 
     }
 

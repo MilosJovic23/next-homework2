@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Search from "@/app/components/SearchByTitle";
+import {AuthProvider} from "@/app/context/authContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
       <Search/>
-      {children}
+      <AuthProvider>
+          {children}
+      </AuthProvider>
       </body>
     </html>
   );
